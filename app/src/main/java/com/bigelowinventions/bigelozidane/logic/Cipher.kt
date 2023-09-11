@@ -39,6 +39,7 @@ class Cipher {
 
             plainText.forEach { character ->
                 val upperCaseCharacter = character.isUpperCase()
+                var characterCipherFound = false
 
                 cipherKey.forEach cipherLoop@{ characterKey ->
 
@@ -55,9 +56,17 @@ class Cipher {
                         }
 
                         encodedText += encodedCharacter
+                        characterCipherFound = true
 
                         return@cipherLoop
                     }
+                }
+
+                // If cipher is not defined for the provided character, copy original character
+                if (!characterCipherFound) {
+
+                    encodedText += character
+
                 }
             }
 
