@@ -76,7 +76,38 @@ class Cipher {
         fun decode(encodedText: String): String {
             var plainText = ""
 
+            encodedText.forEach { character ->
+                val upperCaseCharacter = character.isUpperCase()
+                var characterCipherFound = false
 
+                cipherKey.forEach cipherLoop@{ characterKey ->
+
+                    if (character.lowercaseChar() == characterKey["encoded"]) {
+
+                        val decodedCharacter = if (upperCaseCharacter) {
+
+                            characterKey["decoded"]?.uppercaseChar()
+
+                        } else {
+
+                            characterKey["decoded"]
+
+                        }
+
+                        plainText += decodedCharacter
+                        characterCipherFound = true
+
+                        return@cipherLoop
+                    }
+                }
+
+                // If cipher is not defined for the provided character, copy original character
+                if (!characterCipherFound) {
+
+                    plainText += character
+
+                }
+            }
 
             return plainText
         }
