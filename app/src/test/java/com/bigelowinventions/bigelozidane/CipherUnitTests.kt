@@ -18,7 +18,15 @@ class CipherUnitTests {
         val encodedInput = "Jipmqy hydh ha mkanyjj."
         assertEquals(encodedInput, Cipher.encode(inputText))
 
-        // cipher character sweep
+        // Cipher character sweep
         //assertEquals(4, 2 + 2)
+    }
+
+    @Test
+    fun decode_pass() {
+        // Manual text entry
+        val encodedText = "Jipmqy hydh ha mkanyjj."
+        val decodedText = "Sample text to process."
+        assertEquals(decodedText, Cipher.decode(encodedText))
     }
 }
