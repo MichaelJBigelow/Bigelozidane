@@ -54,7 +54,7 @@ class Cipher {
 
                         }
 
-                        encodedText.plus(encodedCharacter)
+                        encodedText += encodedCharacter
 
                         return@cipherLoop
                     }
