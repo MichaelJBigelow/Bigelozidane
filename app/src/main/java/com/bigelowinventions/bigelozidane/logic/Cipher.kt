@@ -35,13 +35,39 @@ class Cipher {
         )
 
         fun encode(plainText: String): String {
-            var encodedText = plainText
+            var encodedText = ""
+
+            plainText.forEach { character ->
+                val upperCaseCharacter = character.isUpperCase()
+
+                cipherKey.forEach cipherLoop@{ characterKey ->
+
+                    if (character.lowercaseChar() == characterKey["decoded"]) {
+
+                        val encodedCharacter = if (upperCaseCharacter) {
+
+                            characterKey["encoded"]?.uppercaseChar()
+
+                        } else {
+
+                            characterKey["encoded"]
+
+                        }
+
+                        encodedText.plus(encodedCharacter)
+
+                        return@cipherLoop
+                    }
+                }
+            }
 
             return encodedText
         }
 
         fun decode(encodedText: String): String {
-            var plainText = encodedText
+            var plainText = ""
+
+
 
             return plainText
         }
