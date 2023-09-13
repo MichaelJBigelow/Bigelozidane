@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/nav_translator"
-        android:name="com.bigelowinventions.bigelozidane.ui.translator.HomeFragment"
+        android:name="com.bigelowinventions.bigelozidane.ui.translator.TranslatorFragment"
         android:label="@string/menu_translator"
         tools:layout="@layout/fragment_home" />
 

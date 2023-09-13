@@ -9,7 +9,7 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import com.bigelowinventions.bigelozidane.databinding.FragmentHomeBinding
 
-class HomeFragment : Fragment() {
+class TranslatorFragment : Fragment() {
 
     private var _binding: FragmentHomeBinding? = null
 
@@ -22,19 +22,19 @@ class HomeFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        val homeViewModel =
-            ViewModelProvider(this).get(HomeViewModel::class.java)
+        val translatorViewModel =
+            ViewModelProvider(this).get(TranslatorViewModel::class.java)
 
         _binding = FragmentHomeBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
         val inputEditText: EditText = binding.inputEditText
-        homeViewModel.inputText.observe(viewLifecycleOwner) {
+        translatorViewModel.inputText.observe(viewLifecycleOwner) {
             inputEditText.setText(it)
         }
 
         val outputEditText: EditText = binding.outputEditText
-        homeViewModel.outputText.observe(viewLifecycleOwner) {
+        translatorViewModel.outputText.observe(viewLifecycleOwner) {
             outputEditText.setText(it)
         }
 
