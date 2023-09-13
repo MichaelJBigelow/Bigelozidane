@@ -1,4 +1,4 @@
-package com.bigelowinventions.bigelozidane.ui.home
+package com.bigelowinventions.bigelozidane.ui.translator
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
