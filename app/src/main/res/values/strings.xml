@@ -10,4 +10,6 @@
     <string name="menu_about">About</string>
     <string name="menu_links">Links</string>
     <string name="menu_translator">Translator</string>
+    <string name="encoded_text">Encoded Text</string>
+    <string name="plain_text">Plain Text</string>
 </resources>
