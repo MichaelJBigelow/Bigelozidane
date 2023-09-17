@@ -1,12 +1,12 @@
 package com.bigelowinventions.bigelozidane.ui.links
 
+import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.ViewModelProvider
 import com.bigelowinventions.bigelozidane.databinding.FragmentLinksBinding
 
 class LinksFragment : Fragment() {
@@ -22,17 +22,45 @@ class LinksFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        val linksViewModel =
-            ViewModelProvider(this).get(LinksViewModel::class.java)
-
         _binding = FragmentLinksBinding.inflate(inflater, container, false)
-        val root: View = binding.root
 
-        val textView: TextView = binding.textSlideshow
-        linksViewModel.text.observe(viewLifecycleOwner) {
-            textView.text = it
+        binding.websiteButton.setOnClickListener {
+            val urlIntent = Intent(
+                Intent.ACTION_VIEW,
+                Uri.parse("https://www.bigelowinventions.com/shop")
+            )
+
+            startActivity(urlIntent)
         }
-        return root
+
+        binding.youtubeButton.setOnClickListener {
+            val urlIntent = Intent(
+                Intent.ACTION_VIEW,
+                Uri.parse("https://www.youtube.com/channel/UCCM439w1ADH2XJWHrhZeUGA")
+            )
+
+            startActivity(urlIntent)
+        }
+
+        binding.twitchButton.setOnClickListener {
+            val urlIntent = Intent(
+                Intent.ACTION_VIEW,
+                Uri.parse("https://www.twitch.tv/bigelowinventions")
+            )
+
+            startActivity(urlIntent)
+        }
+
+        binding.twitterButton.setOnClickListener {
+            val urlIntent = Intent(
+                Intent.ACTION_VIEW,
+                Uri.parse("https://twitter.com/BigelowInvents")
+            )
+
+            startActivity(urlIntent)
+        }
+
+        return binding.root
     }
 
     override fun onDestroyView() {

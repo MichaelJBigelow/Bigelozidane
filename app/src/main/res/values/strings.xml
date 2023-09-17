@@ -15,4 +15,5 @@
     <string name="about_text">
         Bigelozidane is the first C++ program that I wrote when I was roughly 16 years old and has now been converted to an Android app. It\'s essentially a simple substitution cipher that takes plain text and encodes it so other people can\'t read it.\n\nImportant Note:\nPlease keep in mind that this is for entertainment purposes only. Don\'t encode any important information because substitution ciphers are easy to crack for experienced cryptographers.
     </string>
+    <string name="links_text">Links</string>
 </resources>
