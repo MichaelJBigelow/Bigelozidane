@@ -22,16 +22,16 @@ class AboutFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        val aboutViewModel =
-            ViewModelProvider(this).get(AboutViewModel::class.java)
+        /*val aboutViewModel =
+            ViewModelProvider(this).get(AboutViewModel::class.java)*/
 
         _binding = FragmentAboutBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
-        val textView: TextView = binding.textGallery
+        /*val textView: TextView = binding.textGallery
         aboutViewModel.text.observe(viewLifecycleOwner) {
             textView.text = it
-        }
+        }*/
         return root
     }
 
