@@ -15,11 +15,11 @@
         android:id="@+id/nav_about"
         android:name="com.bigelowinventions.bigelozidane.ui.about.AboutFragment"
         android:label="@string/menu_about"
-        tools:layout="@layout/fragment_gallery" />
+        tools:layout="@layout/fragment_about" />
 
     <fragment
         android:id="@+id/nav_links"
         android:name="com.bigelowinventions.bigelozidane.ui.links.LinksFragment"
         android:label="@string/menu_links"
-        tools:layout="@layout/fragment_slideshow" />
+        tools:layout="@layout/fragment_links" />
 </navigation>
