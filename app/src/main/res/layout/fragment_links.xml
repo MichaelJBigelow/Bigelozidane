@@ -7,21 +7,6 @@
     android:background="@color/dark_gray"
     tools:context=".ui.links.LinksFragment">
 
-    <TextView
-        android:id="@+id/text_links"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="16dp"
-        android:textAlignment="center"
-        android:textColor="@color/white"
-        android:textSize="20sp"
-        android:text="@string/links_text"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
     <Button
         android:id="@+id/websiteButton"
         android:layout_width="wrap_content"
@@ -30,7 +15,7 @@
         android:text="Shop Bigelow Inventions"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/text_links" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/youtubeButton"
