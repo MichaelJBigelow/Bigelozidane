@@ -17,9 +17,9 @@
     <style name="Theme.Bigelozidane.NoActionBar">
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
+        <item name="android:windowSplashScreenBackground">@color/dark_gray</item>
     </style>
 
     <style name="Theme.Bigelozidane.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
-
     <style name="Theme.Bigelozidane.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 </resources>
