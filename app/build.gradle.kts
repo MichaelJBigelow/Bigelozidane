@@ -11,8 +11,8 @@ android {
         applicationId = "com.bigelowinventions.bigelozidane"
         minSdk = 31
         targetSdk = 34
-        versionCode = 1
-        versionName = "v2023.9.17.1"
+        versionCode = 2
+        versionName = "v2023.9.22.1"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
