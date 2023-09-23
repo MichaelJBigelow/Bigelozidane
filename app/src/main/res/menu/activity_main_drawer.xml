@@ -6,7 +6,7 @@
     <group android:checkableBehavior="single">
         <item
             android:id="@+id/nav_encoder"
-            android:icon="@drawable/baseline_vpn_key_24"
+            android:icon="@drawable/baseline_enhanced_encryption_24"
             android:title="@string/menu_encoder" />
         <item
             android:id="@+id/nav_decoder"
