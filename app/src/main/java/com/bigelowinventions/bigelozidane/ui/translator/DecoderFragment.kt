@@ -8,11 +8,11 @@ import android.widget.EditText
 import androidx.core.widget.doOnTextChanged
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
-import com.bigelowinventions.bigelozidane.databinding.FragmentTranslatorBinding
+import com.bigelowinventions.bigelozidane.databinding.FragmentDecoderBinding
 
-class TranslatorFragment : Fragment() {
+class DecoderFragment : Fragment() {
 
-    private var _binding: FragmentTranslatorBinding? = null
+    private var _binding: FragmentDecoderBinding? = null
 
     // This property is only valid between onCreateView and
     // onDestroyView.
@@ -23,24 +23,24 @@ class TranslatorFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        val translatorViewModel =
-            ViewModelProvider(this).get(TranslatorViewModel::class.java)
+        val decoderViewModel =
+            ViewModelProvider(this).get(DecoderViewModel::class.java)
 
-        _binding = FragmentTranslatorBinding.inflate(inflater, container, false)
+        _binding = FragmentDecoderBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
         val inputEditText: EditText = binding.inputEditText
         inputEditText.doOnTextChanged { text, start, before, count ->
-            translatorViewModel.inputText.value = text.toString()
+            decoderViewModel.inputText.value = text.toString()
         }
 
         val outputEditText: EditText = binding.outputEditText
-        translatorViewModel.outputText.observe(viewLifecycleOwner) {
+        decoderViewModel.outputText.observe(viewLifecycleOwner) {
             outputEditText.setText(it)
         }
 
         binding.translateButton.setOnClickListener {
-            translatorViewModel.encode()
+            decoderViewModel.decode()
         }
 
         return root

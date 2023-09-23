@@ -3,13 +3,19 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/mobile_navigation"
-    app:startDestination="@+id/nav_translator">
+    app:startDestination="@+id/nav_encoder">
 
     <fragment
-        android:id="@+id/nav_translator"
-        android:name="com.bigelowinventions.bigelozidane.ui.translator.TranslatorFragment"
-        android:label="@string/menu_translator"
-        tools:layout="@layout/fragment_translator" />
+        android:id="@+id/nav_encoder"
+        android:name="com.bigelowinventions.bigelozidane.ui.translator.EncoderFragment"
+        android:label="@string/menu_encoder"
+        tools:layout="@layout/fragment_encoder" />
+
+    <fragment
+        android:id="@+id/nav_decoder"
+        android:name="com.bigelowinventions.bigelozidane.ui.translator.DecoderFragment"
+        android:label="@string/menu_decoder"
+        tools:layout="@layout/fragment_decoder" />
 
     <fragment
         android:id="@+id/nav_about"

@@ -5,14 +5,14 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.bigelowinventions.bigelozidane.logic.Cipher
 
-class TranslatorViewModel : ViewModel() {
+class DecoderViewModel : ViewModel() {
     val inputText: MutableLiveData<String> = MutableLiveData<String>("")
     val outputText: MutableLiveData<String> = MutableLiveData<String>("")
 
     @MainThread
-    fun encode() {
+    fun decode() {
         outputText.postValue(
-            Cipher.encode(inputText.value.toString())
+            Cipher.decode(inputText.value.toString())
         )
     }
 }
