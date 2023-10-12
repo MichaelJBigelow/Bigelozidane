@@ -42,12 +42,19 @@ class EncoderFragment : Fragment() {
         pasteTextImageButton.setOnClickListener {
             val context = requireContext()
             val clipboard = getSystemService(context, ClipboardManager::class.java) as ClipboardManager
-            InputManager.writeToClipboard(encoderViewModel.inputText.value.toString(), clipboard)
+            binding.inputEditText.setText(InputManager.readFromClipboard(clipboard))
         }
 
         val outputEditText: EditText = binding.outputEditText
         encoderViewModel.outputText.observe(viewLifecycleOwner) {
             outputEditText.setText(it)
+        }
+
+        val copyTextImageButton: ImageView = binding.copyTextImageButton
+        copyTextImageButton.setOnClickListener {
+            val context = requireContext()
+            val clipboard = getSystemService(context, ClipboardManager::class.java) as ClipboardManager
+            InputManager.writeToClipboard(encoderViewModel.outputText.value.toString(), clipboard)
         }
 
         binding.translateButton.setOnClickListener {
