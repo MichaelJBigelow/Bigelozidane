@@ -82,7 +82,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
-        android:id="@+id/imageView4"
+        android:id="@+id/pasteTextImageButton"
         android:layout_width="32dp"
         android:layout_height="32dp"
         android:src="@drawable/baseline_content_paste_24"
@@ -91,7 +91,7 @@
         app:layout_constraintTop_toTopOf="@+id/inputTextView" />
 
     <ImageView
-        android:id="@+id/imageView5"
+        android:id="@+id/copyTextImageButton"
         android:layout_width="32dp"
         android:layout_height="32dp"
         android:src="@drawable/baseline_content_copy_24"
