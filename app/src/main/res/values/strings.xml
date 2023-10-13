@@ -18,4 +18,5 @@
     <string name="links_text">Links</string>
     <string name="menu_encoder">Encoder</string>
     <string name="menu_decoder">Decoder</string>
+    <string name="translate_button">Translate</string>
 </resources>

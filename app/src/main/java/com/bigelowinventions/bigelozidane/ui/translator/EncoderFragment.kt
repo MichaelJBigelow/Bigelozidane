@@ -1,14 +1,18 @@
 package com.bigelowinventions.bigelozidane.ui.translator
 
+import android.content.ClipboardManager
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.EditText
+import android.widget.ImageView
+import androidx.core.content.ContextCompat.getSystemService
 import androidx.core.widget.doOnTextChanged
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import com.bigelowinventions.bigelozidane.databinding.FragmentEncoderBinding
+import com.bigelowinventions.bigelozidane.logic.InputManager
 
 class EncoderFragment : Fragment() {
 
@@ -34,9 +38,23 @@ class EncoderFragment : Fragment() {
             encoderViewModel.inputText.value = text.toString()
         }
 
+        val pasteTextImageButton: ImageView = binding.pasteTextImageButton
+        pasteTextImageButton.setOnClickListener {
+            val context = requireContext()
+            val clipboard = getSystemService(context, ClipboardManager::class.java) as ClipboardManager
+            binding.inputEditText.setText(InputManager.readFromClipboard(clipboard))
+        }
+
         val outputEditText: EditText = binding.outputEditText
         encoderViewModel.outputText.observe(viewLifecycleOwner) {
             outputEditText.setText(it)
+        }
+
+        val copyTextImageButton: ImageView = binding.copyTextImageButton
+        copyTextImageButton.setOnClickListener {
+            val context = requireContext()
+            val clipboard = getSystemService(context, ClipboardManager::class.java) as ClipboardManager
+            InputManager.writeToClipboard(encoderViewModel.outputText.value.toString(), clipboard)
         }
 
         binding.translateButton.setOnClickListener {
