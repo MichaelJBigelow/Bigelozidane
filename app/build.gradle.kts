@@ -5,12 +5,12 @@ plugins {
 
 android {
     namespace = "com.bigelowinventions.bigelozidane"
-    compileSdk = 34
+    compileSdk = 36
 
     defaultConfig {
         applicationId = "com.bigelowinventions.bigelozidane"
         minSdk = 31
-        targetSdk = 34
+        targetSdk = 36
         versionCode = 4
         versionName = "v2023.10.12.1"
 
